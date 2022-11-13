@@ -27,7 +27,7 @@ import com.demo.employee.repository.DepartmentRepository;
 import com.demo.employee.repository.EmployeeRepository;
 import com.demo.employee.service.EmployeeService;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @Validated
 @RequestMapping("/api/v1")

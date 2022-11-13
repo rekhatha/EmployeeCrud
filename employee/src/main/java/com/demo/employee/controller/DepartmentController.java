@@ -22,7 +22,7 @@ import com.demo.employee.model.Departments;
 import com.demo.employee.repository.DepartmentRepository;
 import com.demo.employee.service.DepartmentService;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1")
 public class DepartmentController {

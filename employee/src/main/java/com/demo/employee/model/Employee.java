@@ -19,8 +19,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.Data;
 
 @Data
@@ -31,49 +29,40 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "employee_id")
-	@JsonProperty("Employee Id")
 	private Long employeeId;
 	
 	@Size(min=2)
 	@NotNull(message = "First Name is mandatory")
 	@Column(name = "first_name")
-	@JsonProperty("First Name")
 	private String firstName;
 	
 	@Size(min=2)
 	@NotNull(message = "Last Name is mandatory")
 	@Column(name = "last_name")
-	@JsonProperty("Last Name")
 	private String lastName;
 	
 	@Email
 	@Column(name = "email")
-	@JsonProperty("Email")
 	private String email;
 	
 	@Pattern(regexp="^(?=(?:\\D*\\d){8}$)\\d+(?:(?:-\\d+){0,2}|(?:\\s+\\d+){0,1})$",message="Phone number contains only digits and dashs")  
 	@Column(name = "phone_number")
-	@JsonProperty("Phone Number")
 	private String phoneNumber;
 	
 	@FutureOrPresent
 	@Column(name = "hire_date")
 	@Temporal(TemporalType.DATE)
-	@JsonProperty("Hire Date")
 	private Date hireDate;
 
 	@Min(value = 1, message = "The value must be greater than zero")
 	@Column(name = "salary")
 	@Digits(integer=8, fraction=2)
-	@JsonProperty("Salary")
 	private BigInteger salary;
 	
 	@Column(name = "manager_id")
-	@JsonProperty("Manager Id")
 	private Long managerId;
 	
 	@Column(name = "department_id")
-	@JsonProperty("Department Id")
 	private Long departmentId;
 
 	public Employee() {
